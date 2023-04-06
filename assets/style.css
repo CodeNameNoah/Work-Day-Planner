@@ -1,6 +1,7 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 16px;
+  background: #b6b5e2a6;
 }
 
 textarea {
@@ -10,6 +11,11 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+}
+
+header {
+  background-color: #232c4e;
+  color: white;
 }
 
 .description {
@@ -31,18 +37,24 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #7a7a7a;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: yellow;
   color: white;
 }
 
 .future {
   background-color: #77dd77;
   color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 40px;
+  transition: all 0.7s ease-in-out;
+
 }
 
 .saveBtn {
@@ -53,7 +65,47 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+.btn {
+  background-color: #e2aef6e8;
+  border: black 1px solid;
+}
+
+/* overwrites SCSS's properties */
+.lead {
+  font-size: 19px;
+  color: #ce8400;
+}
+
+.display-3 {
+  font-size: 75px;
+  background-image: linear-gradient(43deg,
+      #002bff 0%,
+      #c6c6c6 46%,
+      #f9a000 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* affects properties of save icon */
+.fas {
+  font-size: x-large;
+}
+
+#color-code {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+
+#future-green {
+  color: #77dd77;
+}
+
+#present-yellow {
+  color: rgb(255, 255, 70);
+}
+
+#past-grey {
+  color: #7a7a7a;
 }
