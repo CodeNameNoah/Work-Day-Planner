@@ -78,10 +78,10 @@ header {
 
 .display-3 {
   font-size: 75px;
-  background-image: linear-gradient(43deg,
+  background-image: linear-gradient(10deg,
       #002bff 0%,
-      #c6c6c6 46%,
-      #f9a000 100%);
+      #ff5d5d 46%,
+      #f9f500 100%);
   color: transparent;
   -webkit-background-clip: text;
 }
