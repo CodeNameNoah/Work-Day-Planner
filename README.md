@@ -20,11 +20,11 @@ Overall, users can rely on this workday scheduler to store their events and acce
 
 ## Take A Look At My Application!
 
-![Timed Quiz!](https://user-images.githubusercontent.com/127361736/229689968-0ab2e22e-a410-4d5c-9928-b6b7192c4d6c.gif)
+![Work Day Scheduler Application](https://user-images.githubusercontent.com/127361736/230523184-8a438d4e-b54c-4971-b092-6f829532b902.gif)
 
 ## Links
 
-- Link to live application https://codenamenoah.github.io/Timed-Quiz-JS-Based/
+- Link to live application https://codenamenoah.github.io/Work-Day-Planner/
 
 ---
 
@@ -34,7 +34,7 @@ Overall, users can rely on this workday scheduler to store their events and acce
 
 1. Click on the green code button and copy the link for the SSH key.
 2. Once clip-boarded load up a command line interface and change directory to one of your preference
-3. Enter in the command `git clone git@github.com:CodeNameNoah/Timed-Quiz-JS-Based.git`
+3. Enter in the command `git clone git@github.com:CodeNameNoah/Work-Day-Planner.git`
 4. Enter your protected SSH password
 5. Enjoy!
 

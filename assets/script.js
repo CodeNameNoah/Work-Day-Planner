@@ -5,10 +5,10 @@ $(function () {
     const target = e.target;
     const $parent = $(target).parent();
 
-    // check if the parent of the target is the button itself
+    // checks if the parent of the target is the button itself
     const isBtnClicked = $parent.hasClass("btn");
 
-    // set local storage key based on button click and the corresponding text area value
+    // sets local storage key based on button click and the corresponding text area value
     const $closestDiv = $(target).closest("div");
     const key = isBtnClicked ? $closestDiv.attr("id") : $parent.attr("id");
     const value = isBtnClicked
@@ -17,7 +17,7 @@ $(function () {
     localStorage.setItem(key, value);
   });
 
-  // add color coding to the box depending on present, past, or future hour
+  // adds color coding to the box depending on present, past, or future hour
   $(".event-scheduler > div").each(function () {
     const hour = Number($(this).attr("id"));
     const currentHour = dayjs().format("H");
@@ -31,7 +31,7 @@ $(function () {
     }
   });
 
-  // check local storage for each section and display the corresponding value
+  // checks local storage for each section and display the corresponding value
   $(".event-scheduler textarea").each(function () {
     const $parent = $(this).parent();
     const key = $parent.attr("id");
