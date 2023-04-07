@@ -1,23 +1,50 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+// waits for browser to finish rendering all elements within the HTML.
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  $(".planner").on("click", ".btn", function (e) {});
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+  // attaches event listener to handle button click on the event-scheduler div and delegate to the buttons
+  $(".event-scheduler").on("click", ".btn", function (e) {
+    const target = e.target;
+    const $parent = $(target).parent();
+
+    // check if the parent of the target is the button itself
+    const isBtnClicked = $parent.hasClass("btn");
+
+    // set local storage key based on button click and the corresponding text area value
+    const $closestDiv = $(target).closest("div");
+    const key = isBtnClicked ? $closestDiv.attr("id") : $parent.attr("id");
+    const value = isBtnClicked
+      ? $parent.siblings("textarea").val()
+      : $(target).siblings("textarea").val();
+    localStorage.setItem(key, value);
+  });
+
+  // add color coding to the box depending on present, past, or future hour
+  $(".event-scheduler > div").each(function () {
+    const hour = Number($(this).attr("id"));
+    const currentHour = dayjs().format("H");
+
+    if (hour > currentHour) {
+      $(this).addClass("future");
+    } else if (hour < currentHour) {
+      $(this).addClass("past");
+    } else {
+      $(this).addClass("present");
+    }
+  });
+
+  // check local storage for each section and display the corresponding value
+  $(".event-scheduler textarea").each(function () {
+    const $parent = $(this).parent();
+    const key = $parent.attr("id");
+    const value = localStorage.getItem(key);
+
+    if (value) {
+      $(this).val(value);
+    }
+  });
+
+  // updates every second and displays current time and day on the header portion
+  setInterval(function () {
+    const currentTime = dayjs().format("h:mm:ss A MMMM D, YYYY");
+    $("#currentDay").text(`The current date and time is ${currentTime}`);
+  }, 1000);
 });

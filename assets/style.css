@@ -22,6 +22,11 @@ header {
   white-space: pre-wrap;
 }
 
+/* added to help see where user is hover mouse for better accessibility */
+.description:hover {
+  background: rgba(255, 255, 255, 0.668);
+}
+
 .time-block {
   border-radius: 15px;
 }
@@ -37,7 +42,7 @@ header {
 }
 
 .past {
-  background-color: #7a7a7a;
+  background-color: #bdb1b9;
   color: white;
 }
 
@@ -89,6 +94,10 @@ header {
 /* affects properties of save icon */
 .fas {
   font-size: x-large;
+}
+
+.px-5 {
+  padding-bottom: 3rem;
 }
 
 #color-code {
